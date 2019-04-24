@@ -35,36 +35,46 @@ public class SedesController {
 
     @GetMapping("/sedes")
     public ModelAndView index() {
-        ModelAndView mv = new ModelAndView("/sedes/index");
+        ModelAndView mv = new ModelAndView("sedes/index");
         mv.addObject("sedes", service.findAll());
         return mv;
     }
 
     @GetMapping("/sedes/create")
     public ModelAndView create(Sede sede) {
-        ModelAndView mv = new ModelAndView("/sedes/form");
+        ModelAndView mv = new ModelAndView("sedes/create");
         mv.addObject("sede", sede);
         return mv;
     }
-
-    @GetMapping("sede/edit/{id}")
-    public ModelAndView edit(@PathVariable("id") Long id) {
-        return create(service.findOne(id));
-    }
-
-    @GetMapping("sede/delete/{id}")
-    public ModelAndView delete(@PathVariable("id") Long id) {
-        service.delete(id);
-        return index();
-    }
-
-    @PostMapping("sede/save")
-    public ModelAndView save(@Valid Sede sede, BindingResult result) {
+    
+    @PostMapping("sedes/store")
+    public ModelAndView store(@Valid Sede sede, BindingResult result) {
         if (result.hasErrors()) {
             return create(sede);
         }
         service.save(sede);
+        return index();
+    }
 
+    @GetMapping("sedes/edit/{id}")
+    public ModelAndView edit(@PathVariable("id") Long id) {
+        ModelAndView mv = new ModelAndView("sedes/edit");
+        mv.addObject("sede", service.findOne(id));
+        return mv;
+    }
+    
+    @PostMapping("sedes/update/{id}")
+    public ModelAndView save(@Valid Sede sede, BindingResult result) {
+        if (result.hasErrors()) {
+            return edit(sede.getId());
+        }
+        service.save(sede);
+        return index();
+    }
+
+    @GetMapping("sedes/delete/{id}")
+    public ModelAndView delete(@PathVariable("id") Long id) {
+        service.delete(id);
         return index();
     }
 
