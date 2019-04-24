@@ -12,10 +12,13 @@
 package br.ufjf.dcc193.trabalho1.model;
 
 import java.io.Serializable;
+import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.OneToMany;
 
 /**
  * Representação da entidade Sede
@@ -34,6 +37,12 @@ public class Sede implements Serializable {
     private String bairro;
     private String telefone;
     private String site;
+
+    @OneToMany(mappedBy = "sede", cascade = CascadeType.ALL)
+    private List<Membro> membros;
+
+    @OneToMany(mappedBy = "sede", cascade = CascadeType.ALL)
+    private List<Atividade> atividades;
 
     public Sede() {
     }
