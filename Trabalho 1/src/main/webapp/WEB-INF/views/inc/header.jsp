@@ -43,8 +43,9 @@
                         <span>Sedes</span>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-                        <a class="dropdown-item" href="/sedes/create">Nova sede</a>
-                        <a class="dropdown-item" href="/sedes/">Listar sedes</a>
+                        <a class="dropdown-item" href="/sedes/create">Nova Sede</a>
+                        <a class="dropdown-item" href="/sedes/">Listagem</a>
+                        <a class="dropdown-item" href="/sedes/report/">Relatório</a>
                     </div>
                 </li>
                 
@@ -55,8 +56,8 @@
                         <span>Membros</span>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-                        <a class="dropdown-item" href="/membros/create">Novo membro</a>
-                        <a class="dropdown-item" href="/membros/">Listar membros</a>
+                        <a class="dropdown-item" href="/membros/create">Novo Membro</a>
+                        <a class="dropdown-item" href="/membros/">Listagem</a>
                     </div>
                 </li>
 
@@ -67,9 +68,8 @@
                         <span>Atividades</span>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-                        <a class="dropdown-item" href="/atividades/create">Nova atividade</a>
-                        <a class="dropdown-item" href="/atividades/">Listar atividades</a>
-                        <a class="dropdown-item" href="/atividades/report/">Relatório</a>
+                        <a class="dropdown-item" href="/atividades/create">Nova Atividade</a>
+                        <a class="dropdown-item" href="/atividades/">Listagem</a>
                     </div>
                 </li>
             </ul>

@@ -102,5 +102,41 @@ public class Sede implements Serializable {
     public void setSite(String site) {
         this.site = site;
     }
+    
+    public int totalMembros(){
+        return membros.size();
+    }
+    
+    public int totalHoraAssistencial(){
+         int total = 0;
+        for (int i = 0; i < atividades.size(); i++) {
+            total += atividades.get(i).getHoraAssistencial();
+        }
+        return total;
+    }
+    
+    public int totalHoraJuridica(){
+         int total = 0;
+        for (int i = 0; i < atividades.size(); i++) {
+            total += atividades.get(i).getHoraJuridica();
+        }
+        return total;
+    }
+    
+    public int totalHoraFinanceira(){
+         int total = 0;
+        for (int i = 0; i < atividades.size(); i++) {
+            total += atividades.get(i).getHoraFinanceira();
+        }
+        return total;
+    }
+    
+     public int totalHoraExecutiva(){
+         int total = 0;
+        for (int i = 0; i < atividades.size(); i++) {
+            total += atividades.get(i).getHoraExecutiva();
+        }
+        return total;
+    }
 
 }

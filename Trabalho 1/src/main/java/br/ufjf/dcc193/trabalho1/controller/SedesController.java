@@ -77,5 +77,12 @@ public class SedesController {
         service.delete(id);
         return index();
     }
+    
+    @GetMapping("/sedes/report")
+    public ModelAndView report() {
+        ModelAndView mv = new ModelAndView("sedes/report");
+        mv.addObject("sedes", service.findAll());
+        return mv;
+    }
 
 }
