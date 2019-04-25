@@ -18,7 +18,7 @@
             <form action="/atividades/update/${atividade.getId()}" method="post">
                 <div class="form-group">
                     <label for="titulo">Título</label>
-                    <input type="text" id="titulo" name="titulo" value="${atividade.titulo}" class="form-control" placeholder="Título" required="required" autofocus="autofocus">
+                    <input type="text" id="titulo" name="titulo" value="${atividade.titulo}" class="form-control" required="required" autofocus="autofocus">
                 </div>
                 <div class="form-group">
                     <div class="form-row">
@@ -36,13 +36,13 @@
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="dataInicio">Data de Início</label>
-                                <input type="text" name="dataInicio" value="${atividade.dataInicio}"  class="form-control" placeholder="Data de Início">
+                                <input type="text" name="dataInicio" value="${atividade.dataInicio}"  class="form-control" placeholder="dd/MM/yyyy">
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="dataFim">Data Final</label>
-                                <input type="text" id="dataFim" name="dataFim" value="${atividade.dataFim}" class="form-control" placeholder="Data Final">
+                                <input type="text" id="dataFim" name="dataFim" value="${atividade.dataFim}" class="form-control" placeholder="dd/MM/yyyy">
                             </div>
                         </div>
                     </div>
@@ -52,31 +52,31 @@
                         <div class="col-md-3">
                             <div class="form-group">
                                 <label for="horaAssistencial">Hora Assistencial</label>
-                                <input type="text" name="horaAssistencial" value="${atividade.horaAssistencial}" class="form-control" placeholder="Hora Assistencial">
+                                <input type="text" name="horaAssistencial" value="${atividade.horaAssistencial}" class="form-control">
                             </div>
                         </div>
                         <div class="col-md-3">
                             <div class="form-group">
                                 <label for="horaJuridica">Hora Jurídica</label>
-                                <input type="text" name="horaJuridica" value="${atividade.horaJuridica}" class="form-control" placeholder="Hora Jurídica">
+                                <input type="text" name="horaJuridica" value="${atividade.horaJuridica}" class="form-control">
                             </div>
                         </div>
                         <div class="col-md-3">
                             <div class="form-group">
                                 <label for="horaFinanceira">Hora Financeira</label>
-                                <input type="text" id="horaFinanceira" name="horaFinanceira" value="${atividade.horaFinanceira}" class="form-control" placeholder="Hora Financeira">
+                                <input type="text" id="horaFinanceira" name="horaFinanceira" value="${atividade.horaFinanceira}" class="form-control">
                             </div>
                         </div>
                         <div class="col-md-3">
                             <div class="form-group">
                                 <label for="horaExecutiva">Hora Executiva</label>
-                                <input type="text" id="horaExecutiva" name="horaExecutiva" value="${atividade.horaExecutiva}" class="form-control" placeholder="Hora Executiva">
+                                <input type="text" id="horaExecutiva" name="horaExecutiva" value="${atividade.horaExecutiva}" class="form-control">
                             </div>
                         </div>
-
                     </div>
                 </div>
                 <div class="form-group">
+                    <label for="decricao">Descrição</label>
                     <textarea class="form-control" rows="10" name="descricao" value="${atividade.descricao}"></textarea>
                 </div>            
                 <button class="btn btn-primary btn-block" type="submit">Salvar</button>

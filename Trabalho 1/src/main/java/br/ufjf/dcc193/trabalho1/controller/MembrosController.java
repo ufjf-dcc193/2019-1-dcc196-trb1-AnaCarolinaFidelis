@@ -13,7 +13,6 @@ package br.ufjf.dcc193.trabalho1.controller;
 
 import br.ufjf.dcc193.trabalho1.model.Membro;
 import br.ufjf.dcc193.trabalho1.service.MembroService;
-import br.ufjf.dcc193.trabalho1.service.SedeService;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -32,7 +31,6 @@ import org.springframework.web.servlet.ModelAndView;
 public class MembrosController {
 
     @Autowired
-    private SedeService sedeService;
     private MembroService service;
 
     @GetMapping("/membros")
@@ -46,7 +44,6 @@ public class MembrosController {
     public ModelAndView create(Membro membro) {
         ModelAndView mv = new ModelAndView("membros/create");
         mv.addObject("membro", membro);
-        mv.addObject("sedes", sedeService.findAll());
         return mv;
     }
 
@@ -63,7 +60,6 @@ public class MembrosController {
     public ModelAndView edit(@PathVariable("id") Long id) {
         ModelAndView mv = new ModelAndView("membros/edit");
         mv.addObject("membro", service.findOne(id));
-        mv.addObject("sedes", sedeService.findAll());
         return mv;
     }
 

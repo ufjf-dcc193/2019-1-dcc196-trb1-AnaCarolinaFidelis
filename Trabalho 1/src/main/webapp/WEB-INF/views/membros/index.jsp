@@ -21,6 +21,7 @@
                         <tr>
                             <th>Nome</th>
                             <th>Email</th>
+                            <th>Telefone</th>
                             <th>Função</th>
                             <th>Sede</th>
                             <th class="text-center">Ações</th>
@@ -31,6 +32,7 @@
                             <tr>
                                 <td>${membro.nome}</td>
                                 <td>${membro.email}</td>
+                                <td>${membro.telefone}</td>
                                 <td>${membro.funcao}</td>
                                 <td>${membro.sede.nome}</td>
                                 <td class="text-center">

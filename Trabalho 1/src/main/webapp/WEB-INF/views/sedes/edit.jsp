@@ -13,33 +13,31 @@
     </ol>
 
     <div class="card">
-        <div class="card-header">Nova sede</div>
+        <div class="card-header">Editar Sede</div>
         <div class="card-body">
-            <form action="/sedes/store" method="post">
+            <form action="/sedes/update/${sede.getId()}" method="post">
                 <div class="form-group">
-                    <div class="form-label-group">
-                        <input type="text" id="nome" name="nome"  value="${sede.nome}" class="form-control" placeholder="Nome da sede" required="required" autofocus="autofocus">
-                        <label for="nome">Nome da sede</label>
-                    </div>
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" name="nome" value="${sede.nome}" class="form-control" required="required" autofocus="autofocus">
                 </div>
                 <div class="form-group">
                     <div class="form-row">
                         <div class="col-md-4">
-                            <div class="form-label-group">
-                                <input type="text" id="bairro" name="bairro" value="${sede.bairro}"  class="form-control" placeholder="Bairro">
+                            <div class="form-group">
                                 <label for="bairro">Bairro</label>
+                                <input type="text" id="bairro" name="bairro" value="${sede.bairro}"  class="form-control">
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <div class="form-label-group">
-                                <input type="text" id="cidade" name="cidade" value="${sede.cidade}" class="form-control" placeholder="Cidade">
+                            <div class="form-group">
                                 <label for="cidade">Cidade</label>
+                                <input type="text" id="cidade" name="cidade" value="${sede.cidade}" class="form-control">
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <div class="form-label-group">
-                                <input type="text" id="estado" name="estado" value="${sede.estado}" class="form-control" placeholder="Estado" value="">
+                            <div class="form-group">
                                 <label for="cidade">Estado</label>
+                                <input type="text" id="estado" name="estado" value="${sede.estado}" class="form-control">
                             </div>
                         </div>
                     </div>
@@ -47,15 +45,15 @@
                 <div class="form-group">
                     <div class="form-row">
                         <div class="col-md-6">
-                            <div class="form-label-group">
-                                <input type="tel" id="telefone" name="telefone" value="${sede.telefone}" class="form-control" placeholder="Telefone">
+                            <div class="form-group">
                                 <label for="telefone">Telefone</label>
+                                <input type="tel" id="telefone" name="telefone" value="${sede.telefone}" class="form-control">
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="form-label-group">
-                                <input type="text" id="site" name="site" value="${sede.site}" class="form-control" placeholder="Site">
+                            <div class="form-group">
                                 <label for="site">Site</label>
+                                <input type="text" id="site" name="site" value="${sede.site}" class="form-control">
                             </div>
                         </div>
                     </div>
