@@ -1,0 +1,14 @@
+br\ufjf\dcc193\trabalho1\repository\MembroRepository.class
+br\ufjf\dcc193\trabalho1\service\MembroService.class
+br\ufjf\dcc193\trabalho1\model\Atividade.class
+br\ufjf\dcc193\trabalho1\model\Membro.class
+br\ufjf\dcc193\trabalho1\controller\SedesController.class
+br\ufjf\dcc193\trabalho1\repository\AtividadeRepository.class
+br\ufjf\dcc193\trabalho1\model\Sede.class
+br\ufjf\dcc193\trabalho1\controller\HomeController.class
+br\ufjf\dcc193\trabalho1\controller\MembrosController.class
+br\ufjf\dcc193\trabalho1\controller\AtividadesController.class
+br\ufjf\dcc193\trabalho1\repository\SedeRepository.class
+br\ufjf\dcc193\trabalho1\Trabalho1Application.class
+br\ufjf\dcc193\trabalho1\service\AtividadeService.class
+br\ufjf\dcc193\trabalho1\service\SedeService.class
