@@ -1,7 +1,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <jsp:include page="../inc/header.jsp">
-    <jsp:param name="title" value="Sedes"/>
+    <jsp:param name="title" value="Membros"/>
 </jsp:include>
 
 <div class="container">
@@ -10,33 +10,33 @@
         <li class="breadcrumb-item">
             <a href="/">Home</a>
         </li>
-        <li class="breadcrumb-item active">Sedes</li>
+        <li class="breadcrumb-item active">Membros</li>
     </ol>
     <div class="card">
-        <div class="card-header">Sedes</div>
+        <div class="card-header">Membros</div>
         <div class="card-body">
             <div class="table-responsive">
-                <table class="table table-hover table-striped" id="sedes-table" width="100%" cellspacing="0">
+                <table class="table table-hover table-striped" id="membros-table" width="100%" cellspacing="0">
                     <thead>
                         <tr>
                             <th>Nome</th>
-                            <th>Bairro</th>
-                            <th>Cidade</th>
-                            <th>Estado</th>
+                            <th>Email</th>
+                            <th>Função</th>
+                            <th>Sede</th>
                             <th class="text-center">Ações</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <c:forEach var="sede" items="${sedes}">
+                        <c:forEach var="membro" items="${membros}">
                             <tr>
-                                <td>${sede.nome}</td>
-                                <td>${sede.bairro}</td>
-                                <td>${sede.cidade}</td>
-                                <td>${sede.estado}</td>
+                                <td>${membro.nome}</td>
+                                <td>${membro.email}</td>
+                                <td>${membro.funcao}</td>
+                                <td>${membro.sede.nome}</td>
                                 <td class="text-center">
                                     <div class="btn-group">
-                                        <a href="/sedes/edit/${sede.getId()}" class="btn btn-sm btn-primary">Editar</a>
-                                        <a  href="/sedes/delete/${sede.getId()}" class="delete btn btn-sm btn-danger">Excluir</a>
+                                        <a href="/membros/edit/${membro.getId()}" class="btn btn-sm btn-primary">Editar</a>
+                                        <a  href="/membros/delete/${membro.getId()}" class="delete btn btn-sm btn-danger">Excluir</a>
                                     </div>
                                 </td>
                             </tr>
