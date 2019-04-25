@@ -1,5 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <jsp:include page="/WEB-INF/views/inc/header.jsp">
     <jsp:param name="title" value="Editar Membro"/>
 </jsp:include>
@@ -52,14 +53,14 @@
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="dataEntrada">Data de entrada</label>
-                                <input type="text" id="dataEntrada" name="dataEntrada" value="${membro.dataEntrada}"  class="form-control" placeholder="dd/MM/yyyy">
+                                <input type="text" id="dataEntrada" name="dataEntrada" value="<fmt:formatDate value="${membro.dataEntrada}" type="date" pattern="dd/MM/yyyy"/>"  class="form-control" placeholder="dd/MM/yyyy">
                             </div>
                         </div>
 
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="dataSaida">Data de saída</label>
-                                <input type="text" id="dataSaida" name="dataSaida" value="${membro.dataSaida}" class="form-control" placeholder="dd/MM/yyyy">
+                                <input type="text" id="dataSaida" name="dataSaida" value="<fmt:formatDate value="${membro.dataSaida}" type="date" pattern="dd/MM/yyyy"/>" class="form-control" placeholder="dd/MM/yyyy">
                             </div>
                         </div>
                     </div>

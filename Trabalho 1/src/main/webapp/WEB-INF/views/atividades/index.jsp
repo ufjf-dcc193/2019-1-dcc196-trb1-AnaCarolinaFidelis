@@ -1,5 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <jsp:include page="../inc/header.jsp">
     <jsp:param name="title" value="Atividades"/>
 </jsp:include>
@@ -31,8 +32,8 @@
                             <tr>
                                 <td>${atividade.titulo}</td>
                                 <td>${atividade.sede.nome}</td>
-                                <td>${atividade.dataInicio}</td>
-                                <td>${atividade.dataFim}</td>
+                                <td><fmt:formatDate value="${atividade.dataInicio}" type="date" pattern="dd/MM/yyyy"/></td>
+                                <td><fmt:formatDate value="${atividade.dataFim}" type="date" pattern="dd/MM/yyyy"/></td>
                                 <td class="text-center">
                                     <div class="btn-group">
                                         <a href="/atividades/edit/${atividade.getId()}" class="btn btn-sm btn-primary">Editar</a>
