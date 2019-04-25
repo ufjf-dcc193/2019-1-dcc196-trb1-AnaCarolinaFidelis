@@ -47,7 +47,7 @@ public class SedesController {
         return mv;
     }
     
-    @PostMapping("sedes/store")
+    @PostMapping("/sedes/store")
     public ModelAndView store(@Valid Sede sede, BindingResult result) {
         if (result.hasErrors()) {
             return create(sede);
@@ -56,14 +56,14 @@ public class SedesController {
         return index();
     }
 
-    @GetMapping("sedes/edit/{id}")
+    @GetMapping("/sedes/edit/{id}")
     public ModelAndView edit(@PathVariable("id") Long id) {
         ModelAndView mv = new ModelAndView("sedes/edit");
         mv.addObject("sede", service.findOne(id));
         return mv;
     }
     
-    @PostMapping("sedes/update/{id}")
+    @PostMapping("/sedes/update/{id}")
     public ModelAndView save(@Valid Sede sede, BindingResult result) {
         if (result.hasErrors()) {
             return edit(sede.getId());
@@ -72,7 +72,7 @@ public class SedesController {
         return index();
     }
 
-    @GetMapping("sedes/delete/{id}")
+    @GetMapping("/sedes/delete/{id}")
     public ModelAndView delete(@PathVariable("id") Long id) {
         service.delete(id);
         return index();
