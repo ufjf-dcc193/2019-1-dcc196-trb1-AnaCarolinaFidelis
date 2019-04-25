@@ -41,10 +41,10 @@ public class Atividade implements Serializable {
     @DateTimeFormat(pattern = "dd/MM/yyyy")
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date dataFim;
-    private float horaAssistencial;
-    private float horaJuridica;
-    private float horaFinanceira;
-    private float horaExecutiva;
+    private int horaAssistencial;
+    private int horaJuridica;
+    private int horaFinanceira;
+    private int horaExecutiva;
 
     public Atividade() {
     }
@@ -97,35 +97,35 @@ public class Atividade implements Serializable {
         this.dataFim = dataFim;
     }
 
-    public float getHoraAssistencial() {
+    public int getHoraAssistencial() {
         return horaAssistencial;
     }
 
-    public void setHoraAssistencial(float horaAssistencial) {
+    public void setHoraAssistencial(int horaAssistencial) {
         this.horaAssistencial = horaAssistencial;
     }
 
-    public float getHoraJuridica() {
+    public int getHoraJuridica() {
         return horaJuridica;
     }
 
-    public void setHoraJuridica(float horaJuridica) {
+    public void setHoraJuridica(int horaJuridica) {
         this.horaJuridica = horaJuridica;
     }
 
-    public float getHoraFinanceira() {
+    public int getHoraFinanceira() {
         return horaFinanceira;
     }
 
-    public void setHoraFinanceira(float horaFinanceira) {
+    public void setHoraFinanceira(int horaFinanceira) {
         this.horaFinanceira = horaFinanceira;
     }
 
-    public float getHoraExecutiva() {
+    public int getHoraExecutiva() {
         return horaExecutiva;
     }
 
-    public void setHoraExecutiva(float horaExecutiva) {
+    public void setHoraExecutiva(int horaExecutiva) {
         this.horaExecutiva = horaExecutiva;
     }
 }

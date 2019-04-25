@@ -1,5 +1,5 @@
 $(function () {
-    $('#membros-table, #sedes-table').DataTable({
+    $('#atividades-table, #membros-table, #sedes-table').DataTable({
         "language": {
             "search": "Buscar:",
             "lengthMenu": "Exibir _MENU_ registros por página",
