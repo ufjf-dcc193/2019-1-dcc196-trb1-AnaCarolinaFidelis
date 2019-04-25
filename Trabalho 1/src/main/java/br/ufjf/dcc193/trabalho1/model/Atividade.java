@@ -26,7 +26,7 @@ import javax.persistence.Temporal;
  *
  * @author Ana Carolina Fidelis Gonçalves
  */
-@Entity(name = "atividades")
+@Entity(name = "atividade")
 public class Atividade implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)

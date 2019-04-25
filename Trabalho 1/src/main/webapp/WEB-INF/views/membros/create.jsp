@@ -18,14 +18,14 @@
             <form action="/membros/store" method="post">
                 <div class="form-group">
                     <label for="nome">Nome</label>
-                    <input type="text" id="nome" name="nome" value="${membro.nome}" class="form-control" required="required" autofocus="autofocus">
+                    <input type="text" id="nome" name="nome" class="form-control" required="required" autofocus="autofocus">
                 </div>
                 <div class="form-group">
                     <div class="form-row">
                         <div class="col-md-6">
                             <div class="form-group">
                                  <label for="email">Email</label>
-                                <input type="email" id="email" name="email" value="${membro.email}" class="form-control">
+                                <input type="email" id="email" name="email" class="form-control">
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -46,20 +46,20 @@
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="funcao">Função</label>
-                                <input type="text" id="funcao" name="funcao" value="${membro.funcao}" class="form-control">
+                                <input type="text" id="funcao" name="funcao" class="form-control">
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="dataEntrada">Data de entrada</label>
-                                <input type="text" id="dataEntrada" name="dataEntrada" value="${membro.dataEntrada}"  class="form-control" placeholder="dd/MM/yyyy">
+                                <input type="text" id="dataEntrada" name="dataEntrada" class="form-control" placeholder="dd/MM/yyyy">
                             </div>
                         </div>
 
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="dataSaida">Data de saída</label>
-                                <input type="text" id="dataSaida" name="dataSaida" value="${membro.dataSaida}" class="form-control" placeholder="dd/MM/yyyy">
+                                <input type="text" id="dataSaida" name="dataSaida" class="form-control" placeholder="dd/MM/yyyy">
                             </div>
                         </div>
                     </div>

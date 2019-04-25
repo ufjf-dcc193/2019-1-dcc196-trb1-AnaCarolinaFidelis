@@ -25,7 +25,7 @@ import javax.persistence.OneToMany;
  *
  * @author Ana Carolina Fidelis Gonçalves
  */
-@Entity(name = "sedes")
+@Entity(name = "sede")
 public class Sede implements Serializable {
 
     @Id

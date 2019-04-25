@@ -13,6 +13,7 @@ package br.ufjf.dcc193.trabalho1.controller;
 
 import br.ufjf.dcc193.trabalho1.model.Membro;
 import br.ufjf.dcc193.trabalho1.service.MembroService;
+import br.ufjf.dcc193.trabalho1.service.SedeService;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -32,6 +33,9 @@ public class MembrosController {
 
     @Autowired
     private MembroService service;
+    
+    @Autowired
+    private SedeService sedeService;
 
     @GetMapping("/membros")
     public ModelAndView index() {
@@ -44,38 +48,40 @@ public class MembrosController {
     public ModelAndView create(Membro membro) {
         ModelAndView mv = new ModelAndView("membros/create");
         mv.addObject("membro", membro);
+        mv.addObject("sedes", sedeService.findAll());
         return mv;
     }
 
     @PostMapping("/membros/store")
-    public ModelAndView store(@Valid Membro membro, BindingResult result) {
+    public String store(@Valid Membro membro, BindingResult result) {
         if (result.hasErrors()) {
-            return create(membro);
+            return "redirect:/membros/create";
         }
         service.save(membro);
-        return index();
+        return "redirect:/membros";
     }
 
     @GetMapping("/membros/edit/{id}")
     public ModelAndView edit(@PathVariable("id") Long id) {
         ModelAndView mv = new ModelAndView("membros/edit");
         mv.addObject("membro", service.findOne(id));
+        mv.addObject("sedes", sedeService.findAll());
         return mv;
     }
 
     @PostMapping("/membros/update/{id}")
-    public ModelAndView save(@Valid Membro membro, BindingResult result) {
+    public String update(@Valid Membro membro, BindingResult result) {
         if (result.hasErrors()) {
-            return edit(membro.getId());
+            return "redirect:/membros/edit/" + membro.getId();
         }
         service.save(membro);
-        return index();
+        return "redirect:/membros";
     }
 
     @GetMapping("/membros/delete/{id}")
-    public ModelAndView delete(@PathVariable("id") Long id) {
+    public String delete(@PathVariable("id") Long id) {
         service.delete(id);
-        return index();
+        return "redirect:/membros";
     }
 
 }

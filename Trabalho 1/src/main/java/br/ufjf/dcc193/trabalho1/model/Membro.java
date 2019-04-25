@@ -26,7 +26,7 @@ import javax.persistence.Temporal;
  *
  * @author Ana Carolina Fidelis Gonçalves
  */
-@Entity(name = "membros")
+@Entity(name = "membro")
 public class Membro implements Serializable {
 
     @Id

@@ -18,7 +18,7 @@
             <form action="/atividades/store" method="post">
                 <div class="form-group">
                     <label for="titulo">Título</label>
-                    <input type="text" id="titulo" name="titulo" value="${atividade.titulo}" class="form-control"  required="required" autofocus="autofocus">
+                    <input type="text" id="titulo" name="titulo" class="form-control"  required="required" autofocus="autofocus">
                 </div>
                 <div class="form-group">
                     <div class="form-row">
@@ -36,13 +36,13 @@
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="dataInicio">Data de Início</label>
-                                <input type="text" name="dataInicio" value="${atividade.dataInicio}"  class="form-control" placeholder="dd/MM/yyyy">
+                                <input type="text" name="dataInicio"  class="form-control" placeholder="dd/MM/yyyy">
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="dataFim">Data Final</label>
-                                <input type="text" id="dataFim" name="dataFim" value="${atividade.dataFim}" class="form-control" placeholder="dd/MM/yyyy">
+                                <input type="text" id="dataFim" name="dataFim"  class="form-control" placeholder="dd/MM/yyyy">
                             </div>
                         </div>
                     </div>
@@ -52,25 +52,25 @@
                         <div class="col-md-3">
                             <div class="form-group">
                                 <label for="horaAssistencial">Hora Assistencial</label>
-                                <input type="text" name="horaAssistencial" value="${atividade.horaAssistencial}" class="form-control">
+                                <input type="text" name="horaAssistencial" class="form-control">
                             </div>
                         </div>
                         <div class="col-md-3">
                             <div class="form-group">
                                 <label for="horaJuridica">Hora Jurídica</label>
-                                <input type="text" name="horaJuridica" value="${atividade.horaJuridica}" class="form-control" >
+                                <input type="text" name="horaJuridica"  class="form-control" >
                             </div>
                         </div>
                         <div class="col-md-3">
                             <div class="form-group">
                                 <label for="horaFinanceira">Hora Financeira</label>
-                                <input type="text" id="horaFinanceira" name="horaFinanceira" value="${atividade.horaFinanceira}" class="form-control">
+                                <input type="text" id="horaFinanceira" name="horaFinanceira" class="form-control">
                             </div>
                         </div>
                         <div class="col-md-3">
                             <div class="form-group">
                                 <label for="horaExecutiva">Hora Executiva</label>
-                                <input type="text" id="horaExecutiva" name="horaExecutiva" value="${atividade.horaExecutiva}" class="form-control" >
+                                <input type="text" id="horaExecutiva" name="horaExecutiva" class="form-control" >
                             </div>
                         </div>
                     </div>

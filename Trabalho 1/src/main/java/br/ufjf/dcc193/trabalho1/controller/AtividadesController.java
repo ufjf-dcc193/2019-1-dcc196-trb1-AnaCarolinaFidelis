@@ -13,6 +13,7 @@ package br.ufjf.dcc193.trabalho1.controller;
 
 import br.ufjf.dcc193.trabalho1.model.Atividade;
 import br.ufjf.dcc193.trabalho1.service.AtividadeService;
+import br.ufjf.dcc193.trabalho1.service.SedeService;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -32,6 +33,9 @@ public class AtividadesController {
 
     @Autowired
     private AtividadeService service;
+    
+    @Autowired
+    private SedeService sedeService;
 
     @GetMapping("/atividades")
     public ModelAndView index() {
@@ -44,38 +48,40 @@ public class AtividadesController {
     public ModelAndView create(Atividade atividade) {
         ModelAndView mv = new ModelAndView("atividades/create");
         mv.addObject("atividade", atividade);
+        mv.addObject("sedes", sedeService.findAll());
         return mv;
     }
 
     @PostMapping("/atividades/store")
-    public ModelAndView store(@Valid Atividade atividade, BindingResult result) {
+    public String store(@Valid Atividade atividade, BindingResult result) {
         if (result.hasErrors()) {
-            return create(atividade);
+            return "redirect:/atividades/create";
         }
         service.save(atividade);
-        return index();
+        return "redirect:/atividades";
     }
 
     @GetMapping("/atividades/edit/{id}")
     public ModelAndView edit(@PathVariable("id") Long id) {
         ModelAndView mv = new ModelAndView("atividades/edit");
         mv.addObject("atividade", service.findOne(id));
+        mv.addObject("sedes", sedeService.findAll());
         return mv;
     }
 
     @PostMapping("/atividades/update/{id}")
-    public ModelAndView save(@Valid Atividade atividade, BindingResult result) {
+    public String upadate(@Valid Atividade atividade, BindingResult result) {
         if (result.hasErrors()) {
-            return edit(atividade.getId());
+            return "redirect:/atividades/edit/" + atividade.getId();
         }
         service.save(atividade);
-        return index();
+        return "redirect:/atividades";
     }
 
     @GetMapping("/atividades/delete/{id}")
-    public ModelAndView delete(@PathVariable("id") Long id) {
+    public String delete(@PathVariable("id") Long id) {
         service.delete(id);
-        return index();
+        return "redirect:/atividades";
     }
 
 }

@@ -46,14 +46,14 @@ public class SedesController {
         mv.addObject("sede", sede);
         return mv;
     }
-    
+
     @PostMapping("/sedes/store")
-    public ModelAndView store(@Valid Sede sede, BindingResult result) {
+    public String store(@Valid Sede sede, BindingResult result) {
         if (result.hasErrors()) {
-            return create(sede);
+            return "redirect:/sedes/create";
         }
         service.save(sede);
-        return index();
+        return "redirect:/sedes";
     }
 
     @GetMapping("/sedes/edit/{id}")
@@ -62,22 +62,22 @@ public class SedesController {
         mv.addObject("sede", service.findOne(id));
         return mv;
     }
-    
+
     @PostMapping("/sedes/update/{id}")
-    public ModelAndView save(@Valid Sede sede, BindingResult result) {
+    public String update(@Valid Sede sede, BindingResult result) {
         if (result.hasErrors()) {
-            return edit(sede.getId());
+            return "redirect:/sedes/edit/" + sede.getId();
         }
         service.save(sede);
-        return index();
+        return "redirect:/sedes";
     }
 
     @GetMapping("/sedes/delete/{id}")
-    public ModelAndView delete(@PathVariable("id") Long id) {
+    public String delete(@PathVariable("id") Long id) {
         service.delete(id);
-        return index();
+        return "redirect:/sedes";
     }
-    
+
     @GetMapping("/sedes/report")
     public ModelAndView report() {
         ModelAndView mv = new ModelAndView("sedes/report");
